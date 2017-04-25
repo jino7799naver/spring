@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(function(){
+
+	$('#btnSay').click(function(){
+		$.getScript('ajax02.js');
+	});
+});
+</script>
+</head>
+<body>
+<input type="button" value="say" id="btnSay">
+<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" id="btnTxt" value="txt get"
+		onclick="getContent();">
+		
+	<div id="result"></div>
+	
+	<script type="text/javascript">
+function getXMLHttpRequest(){
+	if(window.ActiveXObject){//expolor 10 이하
+		console.log('expolor 10 이하');
+		return new ActiveXObject("Msxml2.XMLHTTP"); //expolor 10 ~5	    
+	}else if(window.XMLHttpRequest){
+		console.log('expolor 11 or chome,etc');
+		return new XMLHttpRequest();
+	}
+}
+
+function getReadyState(xhr){
+	console.log('ready state :' + xhr.readyState)
+
+}
+function getContent() {
+	console.log('콘솔에 출력');
+	var xhr = getXMLHttpRequest();	
+	getReadyState(xhr);	
+	xhr.open('GET','msg.txt',true); //xmlhttprequest 열기 	
+	getReadyState(xhr);	
+	xhr.onreadystatechange = function(){ //callback 함수
+		getReadyState(xhr);		
+		if(xhr.readyState ==4){
+			if(xhr.status == 200){
+				document.getElementById('result').innerHTML // div 태그찾기
+				= xhr.responseText; // xhr 객체 열때 읽은 text
+				}
+	 }
+  }
+	xhr.send(null);	
+}
+</script>
+	
+</body>
+</html>

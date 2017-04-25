@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(function(){
+	$('#btnSay').click(function(){
+		$.getJSON('ajax.js', function(data){
+			var html = '<table border=1>'+
+			'<tr><th>번호</th><th>이름</th><th>별명</th></tr>';			
+			$.each(data,function(){
+			html += '<tr>';	
+			html +=	'<td>' + this['num'] + '</td>';
+			html +=	'<td>' + this['name'] + '</td>';
+			html +=	'<td>' + this['nick'] + '</td>';
+			html += '</tr>';	
+			});			
+			html +='</table>';
+			$('#result').html(html);			
+   		});
+	}); 
+});
+</script>
+
+</head>
+<body>
+<input type="button" value="say" id="btnSay">
+<div id="result"></div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(function(){
+	$('#btnSay').click(function(){
+		$.getJSON('ajax.js', function(data){
+			var html = 'json 읽기<br>';
+			$.each(data,function(){
+			html +=	this['name'] + '<br>';
+			});
+			$('#result').html(html);
+		});		
+	});	
+});
+</script>
+</head>
+<body>
+<input type="button" value="say" id="btnSay">
+<div id="result"></div>
+</body></html>

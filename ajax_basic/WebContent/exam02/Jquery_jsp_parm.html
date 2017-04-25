@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(function(){
+
+	$('#btnSay').click(function(){
+		var name = $('#name').val();		
+		$.get( 'param.jsp','name=' + name, function( data ) {
+			  $( '#result' ).html( data );
+			});	
+	});	
+});
+</script>
+</head>
+<body>
+<input type="text" id="name" autofocus="autofocus" required="required">
+<input type="button" value="say" id="btnSay">
+<div id="result"></div>
+</body>
+</html>

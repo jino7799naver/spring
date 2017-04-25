@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(function(){
+	$('#btnTxt').click(function(){
+		$('#result').load('msg.txt');
+	});
+	$('#btnJsp').click(function(){
+		$('#result').load('msg.jsp');
+	});
+})
+</script>
+</head>
+<body>
+<input type="button" id="btnTxt" value="txt get">
+<input type="button" id="btnJsp" value="jsp get">
+	<div id="result"></div>
+</body></html>

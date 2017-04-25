@@ -1,0 +1,17 @@
+﻿[
+	{
+ 	"num":"01",
+ 	"name":"kim",
+ 	"nick":"king"
+	},
+	{
+ 	"num":"02",
+ 	"name":"park",
+ 	"nick":"queen"
+	},
+	{
+ 	"num":"03",
+ 	"name":"lee",
+ 	"nick":"prince"
+	}
+]
